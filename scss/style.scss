@@ -10,6 +10,7 @@
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     font-family: $main-font;
+    background-color: #ffffff;
 }
 
 a {
@@ -34,6 +35,11 @@ section {
 	}
 }
 
+.intro {
+	text-align: center;
+	padding-bottom: 2em;
+}
+
 
 /*
  * Navigation
@@ -45,8 +51,8 @@ section {
 }
 
 .navbar-inverse .navbar-brand {
-	color: #cfd6de;
-    font-family: 'Raleway', sans-serif;
+	color: $accent-color;
+    font-family: $accent-font;
     font-weight: 100;
     font-size: 1.3em;
 }
@@ -94,16 +100,18 @@ section {
 
 h1 {
 	font-size: 1.6em;
-	color: $main-color;
+	color: $neutral-color;
 	font-family: $accent-font;
 	text-align: center;
 }
 
 h2 {
-	font-size: 1.6em;
+	font-size: 1.4em;
 	color: $main-color;
-	margin-top: 1.5em;
+	margin: 20px 0 40px;
 	font-family: $accent-font;
+	padding-bottom: 0;
+	text-align: center;
 	&:first-of-type {
 		margin-top: 0em;
 		font-weight: 100;
@@ -111,9 +119,9 @@ h2 {
 }
 
 h3 {
-	font-size: 1.5em;
+	font-size: 1.3em;
 	margin-bottom: 0.25em;
-	color: #070910;
+	color: $neutral-color;
 	font-family: $main-font;
 	& + h4 {
 		margin-top: 0em;
@@ -123,14 +131,14 @@ h3 {
 h4 {
 	font-size: 1.5em;
 	margin-bottom: 0.25em;
-	color: #070910;
+	color: $neutral-color;
 	font-family: $accent-font;
 }
 
 h5 {
 	font-size: 1.3em;
 	margin-bottom: 0.25em;
-	color: #070910;
+	color: $neutral-color;
 	font-family: $main-font;
 }
 
@@ -141,16 +149,6 @@ p {
 		font-size: 1.4em;
 		line-height: 1.8em;
 		margin: 2em 0 3em;
-	}
-	.firstcharacter {
-	  color: $main-color;
-	  float: left;
-	  font-family: Georgia;
-	  font-size: 5em;
-	  line-height: 60px;
-	  padding-top: 4px;
-	  padding-right: 8px;
-	  padding-left: 3px;
 	}
 }
 
@@ -175,22 +173,6 @@ section.portfolio {
     align-items: baseline;
 }
 
-.award {
-	background: $neutral-color;
-	padding: 8em 4em 4em;
-	margin-left: -15px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    @include respond-to(small) {
-    	padding: 4em;
-    }
-	img {
-		margin-left: auto;
-		margin-right: auto;
-	}
-}
-
 .img-shadow {
 	box-shadow:2px 2px 8px rgba(0, 0, 0, 0.6);
 }
@@ -201,58 +183,19 @@ section.portfolio {
  */
 
 
-/* Rounded center split and bottom rounded */
-.roundedsplit {
-	background: $accent-color;
-	border-radius: 0 0 80px 80px;
-}
-
-.roundedsplit::before,
-.roundedsplit::after {
-	top: -70px;
-	left: 0;
-	z-index: 10;
-	width: 50%;
-	height: 70px;
-	background: inherit;
-	box-shadow: 1px -10px #888888;
-}
-
-.roundedsplit::before {
-	border-radius: 0 80px 0 0;
-}
-
-.roundedsplit::after {
-	left: 50%;
-	border-radius: 80px 0 0 0;
-}
-
-#resume {
+#contact {
+	text-align: center;
 	p {
 		margin-bottom: 1.3em;
 		line-height: 1.5em;
 	}
-	h5 {
-		display: inline-block;
-		margin-top: 0;
-	}
-	span.date {
-	    display: inline-block;
-	    float: right;
-	    padding-right: 2em;
-	}
-	ul {
-	font-size: 1.2em;
-	line-height: 1.5em;
-		li {
-			margin-bottom: 1.2em;
-			&:last-child {
-				margin-bottom: 1.8em;
-			}
+	a {
+		color: $main-color;
+		&:hover {
+			color: $accent-color;
 		}
 	}
 }
-
 
 /*
  * Footer
@@ -261,10 +204,10 @@ section.portfolio {
 
 footer {
 	background-color: $base-color;
-	padding: 1.5em 1em 1em 2em;
+	padding: 0.5em 1em 1em 2em;
     margin: 50px 0 0 0;
+    small {
+		color: #cfd6de;
+	}
 }
 
-footer small {
-	color: #cfd6de;
-}

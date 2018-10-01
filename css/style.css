@@ -17,7 +17,8 @@
 body {
   padding-top: 70px;
   /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-  font-family: "Raleway", sans-serif; }
+  font-family: "Raleway", sans-serif;
+  background-color: #ffffff; }
 
 a {
   color: #4F61A0; }
@@ -37,6 +38,10 @@ section {
     visibility: hidden;
     pointer-events: none; }
 
+.intro {
+  text-align: center;
+  padding-bottom: 2em; }
+
 /*
  * Navigation
  * --------------------------------------------------
@@ -46,7 +51,7 @@ section {
 
 .navbar-inverse .navbar-brand {
   color: #cfd6de;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Meddon", cursive;
   font-weight: 100;
   font-size: 1.3em; }
 
@@ -86,23 +91,25 @@ section {
  */
 h1 {
   font-size: 1.6em;
-  color: #767676;
-  font-family: "Playfair Display", serif;
+  color: #b3b3b3;
+  font-family: "Meddon", cursive;
   text-align: center; }
 
 h2 {
-  font-size: 1.6em;
+  font-size: 1.4em;
   color: #767676;
-  margin-top: 1.5em;
-  font-family: "Playfair Display", serif; }
+  margin: 20px 0 40px;
+  font-family: "Meddon", cursive;
+  padding-bottom: 0;
+  text-align: center; }
   h2:first-of-type {
     margin-top: 0em;
     font-weight: 100; }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.3em;
   margin-bottom: 0.25em;
-  color: #070910;
+  color: #b3b3b3;
   font-family: "Raleway", sans-serif; }
   h3 + h4 {
     margin-top: 0em; }
@@ -110,13 +117,13 @@ h3 {
 h4 {
   font-size: 1.5em;
   margin-bottom: 0.25em;
-  color: #070910;
-  font-family: "Playfair Display", serif; }
+  color: #b3b3b3;
+  font-family: "Meddon", cursive; }
 
 h5 {
   font-size: 1.3em;
   margin-bottom: 0.25em;
-  color: #070910;
+  color: #b3b3b3;
   font-family: "Raleway", sans-serif; }
 
 p {
@@ -126,15 +133,6 @@ p {
     font-size: 1.4em;
     line-height: 1.8em;
     margin: 2em 0 3em; }
-  p .firstcharacter {
-    color: #767676;
-    float: left;
-    font-family: Georgia;
-    font-size: 5em;
-    line-height: 60px;
-    padding-top: 4px;
-    padding-right: 8px;
-    padding-left: 3px; }
 
 /*
  * Portfolio Section
@@ -151,20 +149,6 @@ section.portfolio {
   flex-wrap: wrap;
   align-items: baseline; }
 
-.award {
-  background: #b3b3b3;
-  padding: 8em 4em 4em;
-  margin-left: -15px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline; }
-  @media (min-width: 48em) {
-    .award {
-      padding: 4em; } }
-  .award img {
-    margin-left: auto;
-    margin-right: auto; }
-
 .img-shadow {
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); }
 
@@ -172,48 +156,15 @@ section.portfolio {
  * Contact Section
  * --------------------------------------------------
  */
-/* Rounded center split and bottom rounded */
-.roundedsplit {
-  background: #cfd6de;
-  border-radius: 0 0 80px 80px; }
-
-.roundedsplit::before,
-.roundedsplit::after {
-  top: -70px;
-  left: 0;
-  z-index: 10;
-  width: 50%;
-  height: 70px;
-  background: inherit;
-  box-shadow: 1px -10px #888888; }
-
-.roundedsplit::before {
-  border-radius: 0 80px 0 0; }
-
-.roundedsplit::after {
-  left: 50%;
-  border-radius: 80px 0 0 0; }
-
-#resume p {
-  margin-bottom: 1.3em;
-  line-height: 1.5em; }
-
-#resume h5 {
-  display: inline-block;
-  margin-top: 0; }
-
-#resume span.date {
-  display: inline-block;
-  float: right;
-  padding-right: 2em; }
-
-#resume ul {
-  font-size: 1.2em;
-  line-height: 1.5em; }
-  #resume ul li {
-    margin-bottom: 1.2em; }
-    #resume ul li:last-child {
-      margin-bottom: 1.8em; }
+#contact {
+  text-align: center; }
+  #contact p {
+    margin-bottom: 1.3em;
+    line-height: 1.5em; }
+  #contact a {
+    color: #767676; }
+    #contact a:hover {
+      color: #cfd6de; }
 
 /*
  * Footer
@@ -221,10 +172,9 @@ section.portfolio {
  */
 footer {
   background-color: #000000;
-  padding: 1.5em 1em 1em 2em;
+  padding: 0.5em 1em 1em 2em;
   margin: 50px 0 0 0; }
-
-footer small {
-  color: #cfd6de; }
+  footer small {
+    color: #cfd6de; }
 
 /*# sourceMappingURL=style.css.map */
