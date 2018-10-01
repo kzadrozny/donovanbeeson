@@ -8,11 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway" rel="stylesheet">
 
     <title>Donovan Beeson portfolio</title>
-    <!-- Bootstrap Core CSS -->
+
+    <!-- Vendor CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Meddon" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/navigation.css" rel="stylesheet">
@@ -57,50 +62,57 @@
 
     <!-- Page Content -->
     <div class="container-fluid">
-        <h1><em>Donovan Beeson</em><br/><br/>
-        illustration | ink drawings | line art</h1>
+        <div class="col-sm-12 intro">
+            <h1>Donovan Beeson</h1>
+            <em>illustration &nbsp; | &nbsp; ink drawings &nbsp; &nbsp; | &nbsp; eerie line art</em>
+        </div>
 
         <div class="row">
 
         <!-- Portfolio -->
         <section class="col-lg-12 portfolio" id="portfolio">
-            <h2 class="page-header">Select Work</h2>
-                <div class="flex">
-                    <div class="col-sm-12 col-md-6 portfolio-item">
-                        <img class="img-responsive" src="images/JohnHenry1.jpg" alt="">
-                    </div>
-
-                    <div class="col-sm-12 col-md-6 portfolio-item">
-                        <img class="img-responsive img-shadow" src="images/JohnHenry2.jpg" alt="">
-                    </div>
-
-                    <div class="col-sm-12 col-md-6 portfolio-item">
-                        <img class="img-responsive img-shadow" src="images/Savane1.jpg" alt="">
-                    </div>
-
-                    <div class="col-sm-12 col-md-6 portfolio-item">
-                        <img class="img-responsive img-shadow" src="images/Savane2.jpg" alt="">
-                    </div>
-
-                    <div class="col-sm-12 col-md-4 portfolio-item">
-                        <img class="img-responsive img-shadow" src="images/Jag.jpg" alt="">
-                    </div>
-
-                    <div class="col-sm-12 col-md-4 portfolio-item">
-                        <img class="img-responsive img-shadow" src="images/Belk.jpg" alt="">
-                    </div>
-
-                    <div class="col-sm-12 col-md-4 portfolio-item">
-                        <img class="img-responsive" src="images/PerryEllis.jpg" alt="">
-                    </div>
+            <h2>. . Portfolio . .</h2>
+            <div class="flex">
+                <div class="col-sm-12 col-md-6 portfolio-item">
+                    <img class="img-responsive" src="images/JohnHenry1.jpg" alt="">
                 </div>
+
+                <div class="col-sm-12 col-md-6 portfolio-item">
+                    <img class="img-responsive img-shadow" src="images/JohnHenry2.jpg" alt="">
+                </div>
+
+                <div class="col-sm-12 col-md-6 portfolio-item">
+                    <img class="img-responsive img-shadow" src="images/Savane1.jpg" alt="">
+                </div>
+
+                <div class="col-sm-12 col-md-6 portfolio-item">
+                    <img class="img-responsive img-shadow" src="images/Savane2.jpg" alt="">
+                </div>
+
+                <div class="col-sm-12 col-md-4 portfolio-item">
+                    <img class="img-responsive img-shadow" src="images/Jag.jpg" alt="">
+                </div>
+
+                <div class="col-sm-12 col-md-4 portfolio-item">
+                    <img class="img-responsive img-shadow" src="images/Belk.jpg" alt="">
+                </div>
+
+                <div class="col-sm-12 col-md-4 portfolio-item">
+                    <img class="img-responsive" src="images/PerryEllis.jpg" alt="">
+                </div>
+            </div>
         </section> <!-- /.Featured -->      
 
         <!-- Contact-->
-        <section class="col-xs-12 roundedsplit" id="contact">
-            <h2 class="page-header">Contact</h2>
-            <div class="col-xs-12">
-                
+        <section class="col-xs-12 " id="contact">
+            <h2>. . Contact . .</h2>
+            <div class="col-sm-offset-2 col-sm-4">
+                <a href="mailto:donovan.beeson@gmail.com"><i title="Email Donovan" class="fa fa-4x fa-envelope"></i><br/>
+                donovan.beeson@gmail.com</a>
+            </div>
+            <div class="col-sm-4">
+                <a href="https://www.instagram.com/dovbee/"><i title="Donovan's Instagram" class="fa fa-4x fa-instagram"></i><br/>
+                @dovbee</a>
             </div>
         </section> <!-- / Contact-->
 
@@ -111,27 +123,23 @@
 
     <!--  Footer  -->
     <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                <small>&copy; Donovan Beeson</small>
-            </div>
-        </div>
+        <small>&copy; Donovan Beeson</small>
     </footer>
-    
+
 
 <!-- jQuery -->
-<script src="js/jquery.js"></script>
+    <script src="js/jquery.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
-<script type="text/javascript">
- $(document).on('click','.navbar-collapse.in',function(e) {
-if( $(e.target).is('a') ) {
-    $(this).collapse('hide');
-}
-});
- </script>
+    <script type="text/javascript">
+     $(document).on('click','.navbar-collapse.in',function(e) {
+    if( $(e.target).is('a') ) {
+        $(this).collapse('hide');
+    }
+    });
+     </script>
 
 </body>
 
