@@ -18,6 +18,14 @@ $highlight: #b3b3b3;
 $main-font: 'Raleway', sans-serif;
 $accent-font: 'Playfair Display', serif;
 
+@visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
 /*
  * Global
  * --------------------------------------------------
@@ -26,17 +34,20 @@ $accent-font: 'Playfair Display', serif;
 body {
   font-family: $main-font;
   margin: 0 1.5em;
-  padding-top: 30px;
+  padding-top: 100px;
 }
 
 a {
-  color: $highlight;
+  color: $base-color;
+  &:hover {
+    color: $accent;
+  }
 }
 
-section:not(.leading) { // Give max width to all section that are not the "leading" image
-  max-width: 960px;
+section {
   margin: 0 auto 30px;
 }
+
 
 ul {
   list-style: unset;
@@ -56,19 +67,18 @@ ul {
  */
 
 h1 {
-  font-size: 1.2em;
+  font-size: 1.6em;
   font-family: $main-font;
-  color: #eee;
-  display: inline-block;
-  padding-left: 0.5em;
+  color: black;
+  text-align: center;
 }
 
 h2 {
-  font-size: 1.7em;
+  font-size: 1.5em;
   font-family: $main-font;
   font-weight: 700;
-  color: $main;
-  margin-top: 1.5em;
+  color: black;
+  margin-top: 0;
 }
 
 h3 {
@@ -117,59 +127,44 @@ header {
   left: 0;
   top: 0;
   width: 100%;
-  img {
-    float: left;
-    max-height: 3em;
-    padding-left: 1em;
-    padding-top: 0.5em;
-    @include respond-to(small) {
-      max-height: 2em;
-    }
-  }
 }
 
 nav {
   padding: 1em 0.5em 0.5em 1em;
   font-size: 1em;
-  color: white;
-  background-color: $base-color;
+  background-color: white;
   top: 0;
-  width: 100%;
-  box-shadow: 0px 0px 15px #000;
+  text-align: center;
+  -webkit-transition: height .5s, line-height .5s; /* Safari */
+  transition: height .5s, line-height .5s;
   ul {
     list-style: none;
     display: inline-flex;
-    @include respond-to(smallonly) {
       margin-left: 0;
       padding-left: 0;
-    }
     li {
       padding-left: 2em;
       @include respond-to(small) {
         padding-left: 3.5em;
       }
+      &:first-child {
+        padding-left: 0;
+      }
     }
   }
   a {
-    color: #eee;
+    color: $base-color;
     text-decoration: none;
   }
 }
 
-
-/*
- * General Image Styling
- * --------------------------------------------------
- */
-
-img {
-  &.hero { // wide "hero" image to use within text
-    width: 100%;
-    height: 15em; // change to make hero taller or shorter
-    object-fit: cover;
-  }
-  &.round {  // Makes round icon / thumbnail  image
-    border-radius: 50%;
+.navbar-shrink {
+  font-size: 0.9rem;
+  box-shadow: 0px 0px 5px #000;
+  padding-top: 10px;
+  h1 {
+    font-size: 1.3em;
+    margin-left: -15px;
   }
 }
 
@@ -179,97 +174,75 @@ img {
  * --------------------------------------------------
  */
 
-.cards { // Used in featured grid
+section.cards { // Used in featured grid
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 30px;
-  max-width: 960px;
+  max-width: 1160px;
   margin: 0 auto 30px;
   @include respond-to(small) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
   h2, h3 {  // Excludes h2 and h3 headers from being included in the grid
     @include respond-to(small) {
-      grid-column-start: 1;
-      grid-column-end: 3;
+      grid-column: span 4;
+    }
+  }
+  img {
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    align-self: end;
+    margin-right: auto;
+    margin-left: auto;
+    grid-column: span 2;
+    &.feature {
+      @include respond-to(small) {
+        grid-column: span 4;
+      }
+    }
+    &.tiny {
+      grid-column: span 2;
+      @include respond-to(small) {
+        grid-column: span 1;
+      }
     }
   }
 }
 
-.icons-left {
+section.icons {
   display: grid;
+  padding-top: 5em;
   grid-template-columns: 1fr;
   grid-gap: 20px;
   max-width: 960px;
   margin: 0 auto 30px;
   align-items: center;
+  text-align: center;
   @include respond-to(small) {
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 1fr;
   }
-  h2 { // Excludes h2 from being included in the grid
+  h2 {
     @include respond-to(small) {
-      grid-column-start: 1;
-      grid-column-end: 3;
-    }
+    text-align: left;
+    margin-left: -3em;
   }
-  h3  {
-    margin-top: 0;
   }
   img {
     max-height: 10em;
-    margin-left: auto;
-    margin-right: auto;
     @include respond-to(small) {
       max-width: 15em;
       max-height: none;
     }
-  }
-}
-
-.icons-right {
-  @extend .icons-left;
-  @include respond-to(small) {
-    grid-template-columns: 3fr 1fr;
-  }
-  img {
-    padding-top: 1em;
-    @include respond-to(smallonly) {
-      display: none;
+    &.icon {
+      margin-left: auto;
+      margin-right: auto;
+      max-height: 5em;
     }
   }
 }
 
 
-/*
- * Image Captions
- * --------------------------------------------------
- */
-
-figure {
-  position: relative; // Allows linked image to work without using z-index
-  img {
-    height: 400px;
-    width: 100%;
-    object-fit: cover;
-  }
-  figcaption { // Currently using h3 [in headers section]; change header type to accommodate header order
-    position: absolute;
-    top: 10px;
-    margin-right: 10px;
-    padding: 10px 20px 10px;
-    background-color: rgba(255, 255, 255, 0.5);
-    p {
-      font-size: 0.9em;
-    }
-  }
-  &.feature {
-    margin-top: -10px;
-    @include respond-to(small) {
-      grid-column-start: 1;
-      grid-column-end: 3;
-    }
-  }
-}
 
 /*
  * Footer
@@ -277,15 +250,12 @@ figure {
  */
 
 footer {
-  background-color: $base-color;
-  color: #fff;
+  background-color: white;
+  color: $main;
   font-size: 0.8em;
   margin-left: -2em;
   margin-right: -2em;
   padding: 10px 30px;
-  a {
-    color: #eee;
-  }
 }
 
 
