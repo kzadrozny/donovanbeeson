@@ -1,39 +1,24 @@
+'use strict';
+
 var gulp = require('gulp');
-var concat = require('gulp-concat');
-var rename = require('gulp-rename');
-var sass = require('gulp-sass');
-var maps = require('gulp-sourcemaps');
+var sass = require('gulp-sass'); // Requires the gulp-sass plugin
 var browserSync = require('browser-sync').create();
 
-//Compile Less to css
-gulp.task('less', function(){
-  return gulp.src('scss/**/*.scss')
-    .pipe(less())
+
+gulp.task('sass', function(){
+  return gulp.src('scss/**/*.scss') // Gets all files ending with .scss in src/scss and children dirs
+    .pipe(sass())
     .pipe(gulp.dest('css'))
 	.pipe(browserSync.reload({
       stream: true
     }))
 });
 
-//Compile Sass to css
-gulp.task('compileSass', function() {
-  return gulp.src(['scss/**/*.scss'])
-    .pipe(maps.init()) // Sass source map 1/2
-    .pipe(sass())
-    .pipe(maps.write('./')) // Sass source map 2/2
-    .pipe(gulp.dest('css'))
-  .pipe(browserSync.reload({
-      stream: true
-    }))
-});
-
-// Watch Files
-gulp.task('watchFiles', ['browserSync', 'compileSass'], function() {
-  gulp.watch('scss/**/*.scss', ['compileSass'], browserSync.reload);
+gulp.task('watch', ['browserSync', 'sass'], function(){
+  gulp.watch('scss/**/*.scss', ['sass']);
   gulp.watch('*.html', browserSync.reload);
-});
+})
 
-// Load and refresh on local
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
@@ -42,7 +27,5 @@ gulp.task('browserSync', function() {
   })
 })
 
-gulp.task("build", ['compileSass', 'watchFiles']);
-
-gulp.task("default", ['build']);
-
+gulp.task("default", ["sass", "watch"], function() {
+});

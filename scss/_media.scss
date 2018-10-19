@@ -1,18 +1,4 @@
 /*
- * Variables
- * --------------------------------------------------
- */
-
-
-$main-color: #767676;
-$accent-color: #cfd6de;
-$base-color: #000000;
-$neutral-color: #b3b3b3;
-
-$main-font: 'Raleway', sans-serif;
-$accent-font: 'Raleway', sans-serif;
-
-/*
  * Media Queries
  * --------------------------------------------------
  *
@@ -55,9 +41,16 @@ $accent-font: 'Raleway', sans-serif;
     }
   }
   
-  // Short-cut to target extra small devices *only* (phones, 544px and up)
+  // Short-cut to target extra small devices *only* (544px and below)
   @else if $breakpoint == "smallonly" {
     @media (max-width: 34em) {
+      @content;
+    }
+  }
+
+  // Short-cut to target extra small AND small devices *only* (768px and below)
+  @else if $breakpoint == "mobileonly" {
+    @media (max-width: 48em) {
       @content;
     }
   }
