@@ -155,15 +155,15 @@ section.cards {
     align-self: end;
     margin-right: auto;
     margin-left: auto;
-    grid-column: span 2; }
+    grid-column: span 1; }
     @media (min-width: 48em) {
       section.cards img.feature {
         grid-column: span 4; } }
-    section.cards img.tiny {
-      grid-column: span 2; }
+    section.cards img.med {
+      grid-column: span 1; }
       @media (min-width: 48em) {
-        section.cards img.tiny {
-          grid-column: span 1; } }
+        section.cards img.med {
+          grid-column: span 2; } }
 
 section.icons {
   display: grid;
@@ -177,10 +177,11 @@ section.icons {
   @media (min-width: 48em) {
     section.icons {
       grid-template-columns: 1fr 1fr; } }
-  @media (min-width: 48em) {
-    section.icons h2 {
-      text-align: left;
-      margin-left: -3em; } }
+  section.icons h2 {
+    grid-column: span 2; }
+    @media (min-width: 48em) {
+      section.icons h2 {
+        margin-left: -3em; } }
   section.icons img {
     max-height: 10em; }
     @media (min-width: 48em) {
