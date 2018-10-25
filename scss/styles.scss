@@ -224,9 +224,6 @@ section.icons {
   }
   h2 {
     grid-column: span 2;
-      @include respond-to(small) {
-      margin-left: -3em;
-    }
   }
   img {
     max-height: 10em;
