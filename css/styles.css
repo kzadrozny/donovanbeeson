@@ -179,9 +179,6 @@ section.icons {
       grid-template-columns: 1fr 1fr; } }
   section.icons h2 {
     grid-column: span 2; }
-    @media (min-width: 48em) {
-      section.icons h2 {
-        margin-left: -3em; } }
   section.icons img {
     max-height: 10em; }
     @media (min-width: 48em) {
