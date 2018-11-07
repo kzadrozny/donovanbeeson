@@ -195,16 +195,16 @@ section.cards { // Used in featured grid
     align-self: end;
     margin-right: auto;
     margin-left: auto;
-    grid-column: span 2;
+    grid-column: span 1;
     &.feature {
       @include respond-to(small) {
         grid-column: span 4;
       }
     }
-    &.tiny {
-      grid-column: span 2;
+    &.med {
+      grid-column: span 1;
       @include respond-to(small) {
-        grid-column: span 1;
+        grid-column: span 2;
       }
     }
   }
@@ -223,10 +223,7 @@ section.icons {
     grid-template-columns: 1fr 1fr;
   }
   h2 {
-    @include respond-to(small) {
-    text-align: left;
-    margin-left: -3em;
-  }
+    grid-column: span 2;
   }
   img {
     max-height: 10em;
